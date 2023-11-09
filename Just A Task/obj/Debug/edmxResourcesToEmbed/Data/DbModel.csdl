@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TaskDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GetTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsComplete" Type="Boolean" Nullable="false" />
+    <Property Name="Report" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsCancelled" Type="Boolean" Nullable="false" />
+    <Property Name="IsReadyToCheck" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TaskUser" Relationship="Self.FK_TaskUser_Task" FromRole="Task" ToRole="TaskUser" />
+    <Property Name="IsReturned" Type="Boolean" Nullable="false" />
+    <Property Name="AdminReport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TaskFile" Relationship="TaskDbModel.FK_TaskFile_Task" FromRole="Task" ToRole="TaskFile" />
+  </EntityType>
+  <EntityType Name="TaskUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_TaskUser_Task" FromRole="TaskUser" ToRole="Task" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskUser_User" FromRole="TaskUser" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="TaskUser" Relationship="Self.FK_TaskUser_User" FromRole="User" ToRole="TaskUser" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CanAddTask" Type="Boolean" Nullable="false" />
+    <Property Name="CanChangeUsers" Type="Boolean" Nullable="false" />
+    <Property Name="TelegramUserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DepartamentId" Type="Int32" />
+    <NavigationProperty Name="Departament" Relationship="TaskDbModel.FK_User_Departament" FromRole="User" ToRole="Departament" />
+  </EntityType>
+  <Association Name="FK_TaskUser_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaskUser" Type="Self.TaskUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaskUser">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskUser_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaskUser" Type="Self.TaskUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaskUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TaskDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Task" EntityType="Self.Task" />
+    <EntitySet Name="TaskUser" EntityType="Self.TaskUser" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_TaskUser_Task" Association="Self.FK_TaskUser_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskUser" EntitySet="TaskUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskUser_User" Association="Self.FK_TaskUser_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="TaskUser" EntitySet="TaskUser" />
+    </AssociationSet>
+    <EntitySet Name="SmtpServer" EntityType="TaskDbModel.SmtpServer" />
+    <EntitySet Name="TelegramBot" EntityType="TaskDbModel.TelegramBot" />
+    <EntitySet Name="TaskFile" EntityType="TaskDbModel.TaskFile" />
+    <AssociationSet Name="FK_TaskFile_Task" Association="TaskDbModel.FK_TaskFile_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskFile" EntitySet="TaskFile" />
+    </AssociationSet>
+    <EntitySet Name="Departament" EntityType="TaskDbModel.Departament" />
+    <AssociationSet Name="FK_User_Departament" Association="TaskDbModel.FK_User_Departament">
+      <End Role="Departament" EntitySet="Departament" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SmtpServer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SmtpServerIp" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpServerPort" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpLogin" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpPassword" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TelegramBot">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TelegramBotToken" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TaskFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskId" Type="Int32" Nullable="false" />
+    <Property Name="AttachedFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="AttachedFileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Task" Relationship="TaskDbModel.FK_TaskFile_Task" FromRole="TaskFile" ToRole="Task" />
+  </EntityType>
+  <Association Name="FK_TaskFile_Task">
+    <End Type="TaskDbModel.Task" Role="Task" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TaskDbModel.TaskFile" Role="TaskFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaskFile">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Departament">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="TaskDbModel.FK_User_Departament" FromRole="Departament" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_User_Departament">
+    <End Type="TaskDbModel.Departament" Role="Departament" Multiplicity="0..1" />
+    <End Type="TaskDbModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departament">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DepartamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

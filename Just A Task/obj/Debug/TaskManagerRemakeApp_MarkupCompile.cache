@@ -1,0 +1,20 @@
+﻿TaskManagerRemakeApp
+
+
+winexe
+C#
+.cs
+C:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\obj\Debug\
+TaskManagerRemakeApp
+none
+false
+DEBUG;TRACE
+C:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\App.xaml
+43605510844
+4868557412
+48875007056
+90-456588378
+MainWindow.xaml;Pages\AddTaskPage.xaml;Pages\AddUserPage.xaml;Pages\MenuPages\CancelledPage.xaml;Pages\MenuPages\CompletedPage.xaml;Pages\MenuPages\FiredPage.xaml;Pages\MenuPages\InWorkPage.xaml;Pages\LoginPage.xaml;Pages\LookupPage.xaml;Pages\MenuPages\OnCheckPage.xaml;Pages\MenuPages\RejectedPage.xaml;Pages\TaskDetailPages\AdminTaskDetailCancelledPage.xaml;Pages\TaskDetailPages\AdminTaskDetailCompletedAndRejectedPage.xaml;Pages\TaskDetailPages\AdminTaskDetailInWorkAndFiredPage.xaml;Pages\TaskDetailPages\AdminTaskDetailOnCheckPage.xaml;Pages\TaskDetailPages\NullPage.xaml;Pages\TaskDetailPages\UserTaskDetailCancelledPage.xaml;Pages\TaskDetailPages\UserTaskDetailCompletedAndRejectedPage.xaml;Pages\TaskDetailPages\UserTaskDetailInWorkAndFiredPage.xaml;Pages\TaskDetailPages\UserTaskDetailOnCheckPage.xaml;Pages\TestPage.xaml;Pages\UserDetailPage.xaml;Pages\UserSettingsPage.xaml;Pages\UsersPage.xaml;Resources\DataTemplates\LookupListBoxItemTemplate.xaml;Resources\DataTemplates\MainListBoxItemTemplate.xaml;Resources\DataTemplates\PhotoComboBoxItemTemplate.xaml;Resources\DataTemplates\UsersListBoxItemTemplate.xaml;Resources\Dictionaries\ColorDictionary.xaml;Resources\Dictionaries\FontDictionary.xaml;Resources\Dictionaries\ImageDictionary.xaml;Resources\ObjectStyles\ButtonStyles\AddTaskButtonStyle.xaml;Resources\ObjectStyles\ButtonStyles\MenuButtonStyle.xaml;Resources\ObjectStyles\ButtonStyles\ShowTasksButtonStyle.xaml;Resources\ObjectStyles\ButtonStyles\ShowUsersButtonStyle.xaml;Resources\ObjectStyles\CheckComboBoxStyle.xaml;Resources\ObjectStyles\ComboBoxItemContainerStyles\PhotoComboBoxItemContainerStyle.xaml;Resources\ObjectStyles\ComboBoxStyles\PhotoComboBoxStyle.xaml;Resources\ObjectStyles\ListBoxItemContainerStyles\LookupListBoxItemContainerStyle.xaml;Resources\ObjectStyles\ListBoxStyles\BorderListBoxStyle.xaml;Resources\ObjectStyles\ListBoxStyles\LookupListBoxStyle.xaml;Resources\ObjectStyles\ScrollBarStyle.xaml;Resources\ObjectStyles\TextBoxStyle.xaml;
+
+True
+

@@ -1,0 +1,71 @@
+﻿<Page x:Class="TaskManagerRemakeApp.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskManagerRemakeApp.Pages"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      mc:Ignorable="d" 
+      UseLayoutRounding="True"
+      Style="{StaticResource AllFontPage}"
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="LoginPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.Background>
+            <VisualBrush Stretch="Fill">
+                <VisualBrush.Visual>
+                    <MediaElement Name="MenuBackground">
+                        <MediaElement.Triggers>
+                            <EventTrigger RoutedEvent="MediaElement.Loaded">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <MediaTimeline Source="Resources/Images/LoginPageBackground.mp4" Storyboard.TargetName="MenuBackground" RepeatBehavior="Forever" ></MediaTimeline>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </MediaElement.Triggers>
+                    </MediaElement>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <hc:Theme></hc:Theme>
+                    <hc:ThemeResources></hc:ThemeResources>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Border Width="320" Height="400" Background="{StaticResource BlackoutColorBrush}" CornerRadius="15">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.5"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <Border Background="{StaticResource AdditionalColorBrush}" CornerRadius="15,15,0,0">
+                    <TextBlock Foreground="White" Padding="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top" Text="Авторизация" TextAlignment="Center" FontWeight="DemiBold" FontSize="42"></TextBlock>
+                </Border>
+                <TextBlock Margin="0,40,0,0" Text="Пользователь" Foreground="White" Width="220" FontSize="16"></TextBlock>
+                <hc:ComboBox VerticalContentAlignment="Center" Height="35" Width="220" ItemTemplate="{DynamicResource PhotoComboBoxItemTemplate}" FontSize="16" FontWeight="Medium" x:Name="UsersComboBox" TextBoxBase.TextChanged="OnUsersComboboxTextChanged" IsTextSearchEnabled="False" IsEditable="True" VerticalAlignment="Top">
+                </hc:ComboBox>
+
+                <TextBlock Margin="0,20,0,0" Text="Пароль" Foreground="White" Width="220" FontSize="16"></TextBlock>
+                <TextBox FontSize="16" Width="220" Height="35" x:Name="PasswordTextBox">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="Padding" Value="0,7,0,0"></Setter>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <Button FontWeight="Medium" Foreground="White" Background="{StaticResource MainColorBrush}" BorderThickness="0" FontSize="24" Margin="0,20,0,0" Width="220" x:Name="LoginButton" Height="50" Click="LoginButton_Click">Войти</Button>
+
+                <TextBlock Visibility="Hidden" x:Name="WrongPasswordTextBox" FontWeight="Medium" FontSize="24" Text="Неверный пароль" Foreground="#ff5e57" HorizontalAlignment="Center" Margin="0,35,0,0"></TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

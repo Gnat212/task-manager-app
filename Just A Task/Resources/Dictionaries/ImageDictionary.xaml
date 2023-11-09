@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:svgc="http://sharpvectors.codeplex.com/svgc/">
+
+    <Image x:Key="AddTaskButtonIcon" Source="{svgc:SvgImage Source=/Resources/Images/plusIcon.svg}"/>
+    <svgc:SvgImageExtension x:Key="AddTaskButtonIconSource" Source="/Resources/Images/plusIcon.svg"></svgc:SvgImageExtension>
+    
+    <Image x:Key="ShowTasksButtonIcon" Source="{svgc:SvgImage Source=/Resources/Images/taskListIcon.svg}"/>
+    <svgc:SvgImageExtension x:Key="ShowTasksButtonIconSource" Source="/Resources/Images/taskListIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="InWorkIconSource" Source="/Resources/Images/inWorkIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="OnCheckIconSource" Source="/Resources/Images/onCheckIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="FiredIconSource" Source="/Resources/Images/firedIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="CompletedIconSource" Source="/Resources/Images/completedIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="RejectedIconSource" Source="/Resources/Images/rejectedIcon.svg"></svgc:SvgImageExtension>
+    <svgc:SvgImageExtension x:Key="RejectedIconBlueSource" Source="/Resources/Images/rejectedIconBlue.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="CancelledIconSource" Source="/Resources/Images/cancelledIcon.svg"></svgc:SvgImageExtension>
+    <svgc:SvgImageExtension x:Key="CancelledIconBlueSource" Source="/Resources/Images/cancelledIconBlue.svg"></svgc:SvgImageExtension>
+
+    <Image x:Key="ShowUsersButtonIcon" Source="{svgc:SvgImage Source=/Resources/Images/usersIcon.svg}"/>
+    <svgc:SvgImageExtension x:Key="UsersIconSource" Source="/Resources/Images/usersIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="SettingsIconSource" Source="/Resources/Images/settingsIcon.svg"></svgc:SvgImageExtension>
+    
+    <svgc:SvgImageExtension x:Key="ItemDetailsIconSource" Source="/Resources/Images/itemDetailsIcon.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="AddItemIconSource" Source="/Resources/Images/addIcon.svg"></svgc:SvgImageExtension>
+    <svgc:SvgImageExtension x:Key="AddItemIconBlueSource" Source="/Resources/Images/addIconBlue.svg"></svgc:SvgImageExtension>
+
+    <svgc:SvgImageExtension x:Key="CleanFormIconSource" Source="/Resources/Images/cleanIcon.svg"></svgc:SvgImageExtension>  
+
+</ResourceDictionary>

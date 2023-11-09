@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c0a379d987a4c82ab5b7c5ee03c3c3a" Name="Diagram1">
+        <EntityTypeShape EntityType="TaskDbModel.sysdiagrams" Width="1.5" PointX="9.375" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.Task" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.TaskUser" Width="1.5" PointX="3.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.User" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="TaskDbModel.FK_TaskUser_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_TaskUser_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TaskDbModel.SmtpServer" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TaskDbModel.TelegramBot" Width="1.5" PointX="7.25" PointY="0.875" />
+        <EntityTypeShape EntityType="TaskDbModel.TaskFile" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="TaskDbModel.FK_TaskFile_Task" />
+        <EntityTypeShape EntityType="TaskDbModel.Departament" Width="1.5" PointX="4.375" PointY="9.25" />
+        <AssociationConnector Association="TaskDbModel.FK_User_Departament" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

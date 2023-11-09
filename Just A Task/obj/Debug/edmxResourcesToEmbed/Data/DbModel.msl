@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TaskDbModelContainer" CdmEntityContainer="TaskDbEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TaskDbModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="TaskDbModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="AdminReport" ColumnName="AdminReport" />
+          <ScalarProperty Name="IsReturned" ColumnName="IsReturned" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="GetTime" ColumnName="GetTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+          <ScalarProperty Name="IsReadyToCheck" ColumnName="IsReadyToCheck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskUser">
+      <EntityTypeMapping TypeName="TaskDbModel.TaskUser">
+        <MappingFragment StoreEntitySet="TaskUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TaskDbModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="DepartamentId" ColumnName="DepartamentId" />
+          <ScalarProperty Name="TelegramUserId" ColumnName="TelegramUserId" />
+          <ScalarProperty Name="CanChangeUsers" ColumnName="CanChangeUsers" />
+          <ScalarProperty Name="CanAddTask" ColumnName="CanAddTask" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmtpServer">
+      <EntityTypeMapping TypeName="TaskDbModel.SmtpServer">
+        <MappingFragment StoreEntitySet="SmtpServer">
+          <ScalarProperty Name="SmtpPassword" ColumnName="SmtpPassword" />
+          <ScalarProperty Name="SmtpLogin" ColumnName="SmtpLogin" />
+          <ScalarProperty Name="SmtpServerPort" ColumnName="SmtpServerPort" />
+          <ScalarProperty Name="SmtpServerIp" ColumnName="SmtpServerIp" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TelegramBot">
+      <EntityTypeMapping TypeName="TaskDbModel.TelegramBot">
+        <MappingFragment StoreEntitySet="TelegramBot">
+          <ScalarProperty Name="TelegramBotToken" ColumnName="TelegramBotToken" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskFile">
+      <EntityTypeMapping TypeName="TaskDbModel.TaskFile">
+        <MappingFragment StoreEntitySet="TaskFile">
+          <ScalarProperty Name="AttachedFileName" ColumnName="AttachedFileName" />
+          <ScalarProperty Name="AttachedFile" ColumnName="AttachedFile" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departament">
+      <EntityTypeMapping TypeName="TaskDbModel.Departament">
+        <MappingFragment StoreEntitySet="Departament">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+﻿<Page x:Class="TaskManagerRemakeApp.Pages.TestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskManagerRemakeApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TestPage">
+
+    <Grid Height="70">
+        <DockPanel Margin="5" LastChildFill="False">
+            <Border BorderThickness="0" Width="40" CornerRadius="5" Margin="10">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill"></ImageBrush>
+                </Border.Background>
+            </Border>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" TextTrimming="CharacterEllipsis" Text="Иванова Иванна" FontWeight="SemiBold" FontSize="20"></TextBlock>
+            <Image DockPanel.Dock="Right" Margin="10" HorizontalAlignment="Right" Width="20" Height="20" Source="{StaticResource ItemDetailsIconSource}" VerticalAlignment="Center"></Image>
+        </DockPanel>
+    </Grid>
+</Page>

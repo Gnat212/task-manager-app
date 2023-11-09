@@ -1,0 +1,74 @@
+﻿<Page x:Class="TaskManagerRemakeApp.Pages.LookupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskManagerRemakeApp.Pages"
+      mc:Ignorable="d" 
+      UseLayoutRounding="True"
+      d:DesignHeight="720" d:DesignWidth="940"
+      Style="{StaticResource AllFontPage}"
+      Title="LookupPage">
+
+    <Grid Background="#F5F5F5" Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontWeight="Regular" FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="В работе"/>
+                <TextBlock x:Name="InWorkCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="InWorkListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="На проверке"/>
+                <TextBlock x:Name="OnCheckCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="OnCheckListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="Просроченные"/>
+                <TextBlock x:Name="FiredCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="FiredListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="Завершённые"/>
+                <TextBlock x:Name="CompletedCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="CompletedListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="Отклонённые"/>
+                <TextBlock x:Name="RejectedCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="RejectedListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="3" Style="{StaticResource BorderListBoxStyle}">
+            <DockPanel>
+                <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="Отменённые"/>
+                <TextBlock x:Name="CancelledCountTextBox" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="Задачи: 0"/>
+                <ListBox x:Name="CancelledListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource LookupListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="MainListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Page>

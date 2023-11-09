@@ -1,0 +1,30 @@
+﻿
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\App.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\MainWindow.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\AddTaskPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\AddUserPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\CancelledPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\CompletedPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\FiredPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\InWorkPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\LoginPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\LookupPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\OnCheckPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\MenuPages\RejectedPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\AdminTaskDetailCancelledPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\AdminTaskDetailCompletedAndRejectedPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\AdminTaskDetailInWorkAndFiredPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\AdminTaskDetailOnCheckPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\NullPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\UserTaskDetailCancelledPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\UserTaskDetailCompletedAndRejectedPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\UserTaskDetailInWorkAndFiredPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TaskDetailPages\UserTaskDetailOnCheckPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\TestPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\UserDetailPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\UserSettingsPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Pages\UsersPage.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Resources\DataTemplates\LookupListBoxItemTemplate.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Resources\DataTemplates\MainListBoxItemTemplate.xaml;;
+FC:\Users\Сергей\source\repos\TaskManagerRemakeApp\Just A Task\Resources\DataTemplates\UsersListBoxItemTemplate.xaml;;
+

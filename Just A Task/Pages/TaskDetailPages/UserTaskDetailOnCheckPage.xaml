@@ -1,0 +1,180 @@
+﻿<Page x:Class="TaskManagerRemakeApp.Pages.TaskDetailPages.UserTaskDetailOnCheckPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:local="clr-namespace:TaskManagerRemakeApp.Pages.TaskDetailPages"
+      mc:Ignorable="d" 
+      UseLayoutRounding="True"
+      Style="{StaticResource AllFontPage}"
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="UserTaskDetailOnCheckPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="340"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Visibility="Visible" x:Name="AdminTaskDetailPanelContainer" Grid.ColumnSpan="2" Background="{StaticResource BlackoutColorBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="340"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="AdminTaskDetailPanel" Style="{StaticResource BorderListBoxStyle}" Grid.Column="1" Margin="35,55,35,55">
+                <Grid>
+                    <DockPanel>
+                        <DockPanel.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <hc:Theme></hc:Theme>
+                                    <hc:ThemeResources></hc:ThemeResources>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </DockPanel.Resources>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                            <TextBlock Text="Просмотр задачи" FontWeight="SemiBold" FontSize="24" Margin="30,30,0,0"></TextBlock>
+                            <Button x:Name="AdminReportButton" BorderBrush="Red" Content="В доработке" Margin="30,30,0,0" Click="AdminReportButton_Click"></Button>
+                        </StackPanel>
+
+                        <StackPanel DockPanel.Dock="Top" Margin="30,20,30,0">
+                            <TextBlock Margin="0,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Задача"></TextBlock>
+                            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+                                <hc:TextBox IsReadOnly="True" BorderThickness="2" x:Name="HeaderTextBox" hc:InfoElement.Placeholder="Заголовок задачи" hc:InfoElement.Necessary="True" Height="40" FontSize="26" VerticalContentAlignment="Center"></hc:TextBox>
+                            </ScrollViewer>
+                        </StackPanel>
+
+                        <DockPanel LastChildFill="True" DockPanel.Dock="Top" Margin="30,20,30,0">
+                            <Grid DockPanel.Dock="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Margin="0,0,15,10" FontWeight="SemiBold" FontSize="16" Text="Описание"></TextBlock>
+                                <TextBlock Grid.Column="1" Margin="15,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Отчёт"></TextBlock>
+                            </Grid>
+
+                            <DockPanel Height="160" Margin="0,20,0,0" DockPanel.Dock="Bottom">
+
+                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                    <StackPanel x:Name="Target" DockPanel.Dock="Left">
+                                        <TextBlock Margin="0,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Работникам"></TextBlock>
+                                        <hc:ScrollViewer VirtualizingPanel.ScrollUnit="Pixel">
+                                            <ListBox x:Name="UsersListBox" BorderThickness="2" ItemTemplate="{StaticResource PhotoComboBoxItemTemplate}" Width="180" Height="115">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                                                        <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                            </ListBox>
+                                        </hc:ScrollViewer>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="20,0,0,0" DockPanel.Dock="Left">
+                                        <TextBlock Margin="0,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Право сдачи"></TextBlock>
+                                        <ListBox x:Name="CanConfirmUserListBox" ItemTemplate="{DynamicResource PhotoComboBoxItemTemplate}" Width="180" Height="45" BorderThickness="2">
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                                                    <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
+                                        </ListBox>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="20,0,0,0" DockPanel.Dock="Right">
+                                        <TextBlock Margin="0,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Дата завершения"></TextBlock>
+                                        <Grid>
+                                            <hc:DatePicker Focusable="False" TextBlock.FontFamily="{StaticResource SF UI Display}" TextBlock.FontWeight="Light" TextBlock.FontSize="16" BorderThickness="2" x:Name="EndTimeDatePicker" hc:InfoElement.Placeholder="Дата завершения" FontSize="16" FontWeight="Light" Width="180" Height="45"></hc:DatePicker>
+                                            <Grid Background="Transparent"></Grid>
+                                        </Grid>
+                                    </StackPanel>
+
+                                    <StackPanel DockPanel.Dock="Right">
+                                        <TextBlock Margin="0,0,0,10" FontWeight="SemiBold" FontSize="16" Text="Дата выдачи"></TextBlock>
+                                        <Grid>
+                                            <hc:DatePicker BorderThickness="2" TextBlock.FontFamily="{StaticResource SF UI Display}" TextBlock.FontWeight="Light" hc:InfoElement.Placeholder="Дата определения" FontSize="16" TextBlock.FontSize="16" FontWeight="Light" x:Name="GetTimeDatePicker" Width="180" Height="45"></hc:DatePicker>
+                                            <Grid Background="Transparent"></Grid>
+                                        </Grid>
+                                    </StackPanel>
+                                </DockPanel>
+                            </DockPanel>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <hc:TextBox IsReadOnly="True" Margin="0,0,15,0" BorderThickness="2" VerticalScrollBarVisibility="Auto" x:Name="MessageTextBox" hc:InfoElement.Placeholder="Описание задачи" FontWeight="Light" AcceptsReturn="True" TextWrapping="Wrap"  FontSize="24" VerticalContentAlignment="Top">
+                                    <hc:TextBox.Resources>
+                                        <Style TargetType="ScrollViewer">
+
+                                        </Style>
+                                    </hc:TextBox.Resources>
+                                </hc:TextBox>
+
+                                <DockPanel Grid.Column="1">
+                                    <DockPanel x:Name="AttachedFilePanel" Margin="15,5,0,0" DockPanel.Dock="Bottom">
+                                        <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="16" Text="Прикреплённый архив:"></TextBlock>
+                                        <Button x:Name="DownloadArchiveButton" Background="{StaticResource MainColorBrush}" Margin="10,0,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Click="DownloadArchiveButton_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image RenderTransformOrigin="0.5,0.5" Height="16" Source="{StaticResource AddItemIconSource}">
+                                                    <Image.RenderTransform>
+                                                        <RotateTransform Angle="90"/>
+                                                    </Image.RenderTransform>
+                                                </Image>
+                                                <TextBlock x:Name="FileNameTextBlock" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="Скачать файл" FontSize="12"></TextBlock>
+                                            </StackPanel>
+                                        </Button>
+                                    </DockPanel>
+                                    <hc:TextBox Margin="15,0,0,0" DockPanel.Dock="Top" BorderThickness="2" VerticalScrollBarVisibility="Auto" x:Name="ReportTextBox" IsReadOnly="True" hc:InfoElement.Placeholder="Отчёт" FontWeight="Light" AcceptsReturn="True" TextWrapping="Wrap"  FontSize="24" VerticalContentAlignment="Top">
+                                        <hc:TextBox.Resources>
+                                            <Style TargetType="ScrollViewer">
+
+                                            </Style>
+                                        </hc:TextBox.Resources>
+                                    </hc:TextBox>
+                                </DockPanel>
+                            </Grid>
+
+                        </DockPanel>
+                    </DockPanel>
+                    <Button x:Name="CloseButton" Background="White" BorderThickness="0" Margin="10,10,10,10" Width="60" Height="60" HorizontalAlignment="Right" VerticalAlignment="Top"  Click="CloseButton_Click">
+                        <Image Width="40" Height="40" Source="{StaticResource RejectedIconBlueSource}"></Image>
+                    </Button>
+                </Grid>
+
+            </Border>
+
+            <Border x:Name="RejectPanel" Visibility="Collapsed" Style="{StaticResource BorderListBoxStyle}" Background="#99000000" Grid.Column="1" Margin="35,55,35,55">
+                <Border Style="{StaticResource BorderListBoxStyle}" Margin="50">
+                    <DockPanel>
+                        <DockPanel.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <hc:Theme></hc:Theme>
+                                    <hc:ThemeResources></hc:ThemeResources>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </DockPanel.Resources>
+
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left" FontWeight="SemiBold" FontSize="24" Margin="30,30,0,0" Text="Причина доработки"></TextBlock>
+                            <Button x:Name="CloseAdminReportButton" Background="White" BorderThickness="0" Margin="0,10,10,0" Width="60" Height="60" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Top" Click="CloseAdminReportButton_Click">
+                                <Image Width="40" Height="40" Source="{StaticResource RejectedIconBlueSource}"></Image>
+                            </Button>
+                        </DockPanel>
+                        <hc:TextBox Margin="30,10,30,30" VerticalScrollBarVisibility="Auto" IsReadOnly="True" x:Name="AdminReportTextBox" hc:InfoElement.Placeholder="Причина доработки" FontWeight="Light" AcceptsReturn="True" TextWrapping="Wrap"  FontSize="24" VerticalContentAlignment="Top"></hc:TextBox>
+                    </DockPanel>
+                </Border>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</Page>

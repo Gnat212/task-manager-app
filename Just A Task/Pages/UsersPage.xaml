@@ -1,0 +1,30 @@
+﻿<Page x:Class="TaskManagerRemakeApp.Pages.UsersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskManagerRemakeApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="940"
+      UseLayoutRounding="True"
+      Style="{StaticResource AllFontPage}"
+      Title="UsersPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Background="{StaticResource BackgroundColorBrush}">
+            <Border Style="{StaticResource BorderListBoxStyle}" Margin="20,20,20,100">
+                <DockPanel>
+                    <TextBlock FontSize="24" Margin="20,20,20,5" DockPanel.Dock="Top" Text="Пользователи"/>
+                    <TextBlock x:Name="CountTextBlock" FontSize="14" FontWeight="Light" Foreground="Gray" Margin="20,0,0,0" DockPanel.Dock="Top" Text="dgf"/>
+                    <ListBox DockPanel.Dock="Top" x:Name="UsersListBox" ItemContainerStyle="{StaticResource LookupListBoxItemContainerStyle}" ItemTemplate="{StaticResource UsersListBoxItemTemplate}" Style="{StaticResource LookupListBoxStyle}" SelectionChanged="UsersListBox_SelectionChanged"/>
+                </DockPanel>
+            </Border>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,30" HorizontalContentAlignment="Center" Background="{StaticResource MainColorBrush}" BorderThickness="0" Foreground="White" x:Name="AddButton" Height="35" Width="240" Click="AddButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left" Height="18" Margin="0,0,13,0" Source="{StaticResource AddItemIconSource}"></Image>
+                    <TextBlock Margin="0,0,0,0" HorizontalAlignment="Center" Text="Добавить пользователя" FontSize="16"></TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

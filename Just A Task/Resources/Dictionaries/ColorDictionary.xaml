@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="MainColor">#1A74FF</Color>
+    <SolidColorBrush x:Key="MainColorBrush" Color="{StaticResource MainColor}"></SolidColorBrush>
+    
+    <Color x:Key="AdditionalColor">#7F1A74FF</Color>
+    <SolidColorBrush x:Key="AdditionalColorBrush" Color="{StaticResource AdditionalColor}"></SolidColorBrush>
+
+    <Color x:Key="MenuButtonOverColor">#3F1A74FF</Color>
+    <SolidColorBrush x:Key="MenuButtonOverColorBrush" Color="{StaticResource MenuButtonOverColor}"></SolidColorBrush>
+
+    <Color x:Key="ListBoxItemColor">#E1EDFF</Color>
+    <SolidColorBrush x:Key="ListBoxItemColorBrush" Color="{StaticResource ListBoxItemColor}"></SolidColorBrush>
+
+    <Color x:Key="BackgroundColor">#F5F5F5</Color>
+    <SolidColorBrush x:Key="BackgroundColorBrush" Color="{StaticResource BackgroundColor}"></SolidColorBrush>
+
+    <Color x:Key="BlackoutColor">#7F222222</Color>
+    <SolidColorBrush x:Key="BlackoutColorBrush" Color="{StaticResource BlackoutColor}"></SolidColorBrush>
+
+    <Color x:Key="BlackoutLoginColor">#B2808080</Color>
+    <SolidColorBrush x:Key="BlackoutLoginColorBrush" Color="#B2808080"></SolidColorBrush>
+</ResourceDictionary>

@@ -1,0 +1,51 @@
+﻿<Application x:Class="TaskManagerRemakeApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:TaskManagerRemakeApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <hc:Theme></hc:Theme>
+                <hc:ThemeResources></hc:ThemeResources>
+
+
+                <ResourceDictionary Source="/Resources/Dictionaries/ImageDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Dictionaries/ColorDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Dictionaries/FontDictionary.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="/Resources/ObjectStyles/ButtonStyles/AddTaskButtonStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ButtonStyles/ShowTasksButtonStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ButtonStyles/ShowUsersButtonStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ButtonStyles/MenuButtonStyle.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="/Resources/ObjectStyles/ScrollBarStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/TextBoxStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/CheckComboBoxStyle.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="/Resources/DataTemplates/MainListBoxItemTemplate.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/DataTemplates/LookupListBoxItemTemplate.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ListBoxItemContainerStyles/LookupListBoxItemContainerStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ListBoxStyles/LookupListBoxStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ListBoxStyles/BorderListBoxStyle.xaml"></ResourceDictionary>
+
+                <ResourceDictionary Source="/Resources/ObjectStyles/ComboBoxItemContainerStyles/PhotoComboBoxItemContainerStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/ObjectStyles/ComboBoxStyles/PhotoComboBoxStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/DataTemplates/PhotoComboBoxItemTemplate.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/DataTemplates/UsersListBoxItemTemplate.xaml"></ResourceDictionary>
+
+                <ResourceDictionary>
+                    <Style x:Key="AllFontWindow" TargetType="{x:Type Window}">
+                        <Setter Property="FontFamily" Value="{StaticResource SF UI Display}" />
+                    </Style>
+                    <Style x:Key="AllFontPage" TargetType="{x:Type Page}">
+                        <Setter Property="FontFamily" Value="{StaticResource SF UI Display}" />
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
